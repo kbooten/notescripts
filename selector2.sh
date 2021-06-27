@@ -1,0 +1,2 @@
+#!/bin/bash
+fle=`find *.txt -printf "%T+ %p\n" | sort -r | sed -e 's/^.\+[0-9]\{10\} \(.\+\)$/\1/g' | tr '\n' '\0' | xargs -0 tail -n +1 | sed 's/ <==//g' | tr '\n' ' ** '|  sed 's/==> /\n/g' | fzf -e --no-sort --layout=reverse --delimiter=.txt --tiebreak=begin --with-nth=1 --preview='echo {1};echo "---------------------------";cat {1}.txt' --no-hscroll --preview-window=right:60%:wrap | grep ".+?\.txt" -o -P`
