@@ -1,6 +1,6 @@
 Some scripts for "second brain"\*-type note-taking and note-linking with `fzf`.
 
-In tools like Roam Research and nvALT, a link to another note is represented by [[double brackets]]. These tools use autocomplete to make it easier to write one note that references another.  However, as an nvAlt user, I found this way of referencing links too cognitively-taxing and limiting: even with autocomplete, I usually struggle to find the note to which I want to link.  Also, with autocomplete is difficult to simply browse to find two (or more) notes I might want to link.  
+In tools like Roam Research and nvALT, a link to another note is represented by [[double brackets]]. These tools use autocomplete to make it easier to write one note that references another.  However, as an nvAlt user, I found this way of referencing other notes too cognitively-taxing as well as limiting.  Even with autocomplete, I usually struggle to conjure the name of the note to which I want to link.  Also, autocomplete is not designed to allow me to browse a collection of notes in order to find two (or more) notes I might want to link.  
 
 Here I use `fzf` to make it *easier to create links*. With `fzf`'s preview window I can search through my notes and select *multiple* ones to link (using tab). After selecting the notes, a dialogue presents several options, including 1) linking all notes and 2) "constellating," linking all other notes selected to one particular note (or a new note). Bi-directional double-bracket links are then automatically appended to the relevant files. 
 
