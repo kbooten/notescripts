@@ -4,5 +4,7 @@ In tools like Roam Research and nvALT, a link to another note is represented by 
 
 Here I use `fzf` to make it *easier to create links*. With `fzf`'s preview window I can search through my notes and select *multiple* ones to link. After selecting the notes, a dialogue presents several options, including 1) linking each note to each other note and 2) "constellating"---linking from one of the selected notes (or a new note) to all the other selected ones. Bi-directional double-bracket links are then automatically appended to the relevant files. 
 
-The bash script `noter.sh` searches for notes in its current directory.  `selector1.sh` and `selector2` process the notes for `fzf` in different ways; `noter.sh` uses the first one by default. `newnote.sh` is a very simple script for creating a new note, making sure that it ends in `.txt`.
+***
+
+The main script in this repo is `noter.sh`. It searches for notes---`.txt` files--- in its directory, feeds them to `fzf`, and handles the dialogue.  `selector1.sh` and `selector2` process the notes for `fzf` in different ways; `noter.sh` uses the first one by default. `newnote.sh` is a very simple script for creating a new note, making sure that it ends in `.txt`.
 
