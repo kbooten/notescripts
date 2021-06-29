@@ -6,5 +6,5 @@ Here I use `fzf` to make it *easier to create links*. With `fzf`'s preview windo
 
 ***
 
-The main script in this repo is `noter.sh`. It searches for notes---`.txt` files--- in its directory, feeds them to `fzf`, and handles the dialogue.  `selector1.sh` and `selector2` process the notes for `fzf` in different ways; `noter.sh` uses the first one by default. `newnote.sh` is a very simple script for creating a new note, making sure that it ends in `.txt`.
+The main script in this repo is `noter.sh`. It searches for notes---`.txt` files--- in its directory, feeds them to `fzf`, and handles the dialogue.  `selector1.sh` and `selector2` process the notes for `fzf` in different ways, piping together a variety of \*nix utilities (`tr`, `find`, `grep`, `sed`, etc.).  `noter.sh` uses the first one by default. `newnote.sh` is a very simple script for creating a new note, making sure that it ends in `.txt`.
 
