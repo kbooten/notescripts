@@ -14,6 +14,16 @@ if [ $number -eq 0 ]; then
 	exit 1	
 elif [ $number -eq 1 ]; then
 	vim "${fles[@]}"
+	if [[ "$selector" -eq 2 ]]; then
+		echo "$fle"
+		echo "(o=open, d=delete)"
+		read action
+		if [[ $action == o* ]]; then
+			vim "${fles[@]}"
+		elif [[ $action == d* ]]; then
+			rm "${fles[@]}"
+		fi
+	fi
 elif [ $number -gt 1 ]; then
 	echo "$fle"
 	echo "(o=open, l=link all, c=constellate, q=quit)"
