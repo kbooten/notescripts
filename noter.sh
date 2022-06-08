@@ -10,11 +10,12 @@ IFS='
 '
 read -rd '' -a fles <<<"$fle"
 echo "$fle"
+flesjoined=$(IFS=, ; echo "${fles[*]}")
 number="${#fles[@]}"
 if [ $number -eq 0 ]; then
 	#exit 1 	
 	true
-elif [[ $fles == *"del^.txt"* ]]; then
+elif [[ $flesjoined == *"del^.txt"* ]]; then
         echo "***delete? (y or n)***"
         read action
         if [[ $action == y* ]]; then
