@@ -9,27 +9,32 @@ set -f
 IFS='
 '
 read -rd '' -a fles <<<"$fle"
+echo "$fle"
 number="${#fles[@]}"
 if [ $number -eq 0 ]; then
-	exit 1	
+	#exit 1 	
+	true
+elif [[ $fles == *"del^.txt"* ]]; then
+        echo "***delete? (y or n)***"
+        read action
+        if [[ $action == y* ]]; then
+                mv "${fles[@]}" ~/mytrash
+                echo "files moved to mytrash"
+        else
+                echo "nothing deleted"
+        fi	
+	touch "del^.txt"
 elif [ $number -eq 1 ]; then
-	vim "${fles[@]}"
-	if [[ "$selector" -eq 2 ]]; then
-		echo "$fle"
-		echo "(o=open, d=delete)"
-		read action
-		if [[ $action == o* ]]; then
-			vim "${fles[@]}"
-		elif [[ $action == d* ]]; then
-			rm "${fles[@]}"
-		fi
+	if [ $fles == "nn.txt" ]; then
+		. ./newnote.sh
+	else	
+		vim "${fles[@]}"
 	fi
 elif [ $number -gt 1 ]; then
-	echo "$fle"
 	echo "(o=open, l=link all, c=constellate, q=quit)"
 	read action
 	if [[ $action == q* ]]; then
-		exit 1	
+		true #exit 1	
 	elif [[ $action == o* ]]; then
 		vim "${fles[@]}"
 	elif [[ $action == l* ]]; then
