@@ -6,4 +6,10 @@ Here I use `fzf` to make it *easier to create links*. With `fzf`'s preview windo
 
 ---
 
+Requirements:
+- `fzf`
+- [optional] `goyo.vim` (to make editing text files in Vim more pleasant)
+
+---
+
 The main script in this repo is `noter.sh`. It searches for notes---`.txt` files--- in its directory, feeds them to `fzf`, and handles the dialogue.  `selector1.sh` and `selector2` process the notes for `fzf` in different ways, piping each note's filename and content through various \*nix utilities (`tr`, `find`, `grep`, `sed`, etc.).  `noter.sh` uses the first one by default. `newnote.sh` is a very simple script for creating a new note, making sure that it ends in `.txt`; you can also add a new note from within `noter.sh` by selecting the special file `nn.txt`. `deleter.sh` allows for deleting a note; you can also delete files from within `noter.sh` by selecting the special file `del^.txt` *and* one or more notes to be deleted.  
